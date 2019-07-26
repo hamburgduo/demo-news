@@ -19,6 +19,29 @@
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
+        <exclusions>
+			<exclusion>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-tomcat</artifactId>
+			</exclusion>
+		</exclusions>
     </dependency>
+    <dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+	</dependency>
   </dependencies>
-</project>
+  
+  <build>
+        <plugins>
+            <plugin>     
+			    <groupId>org.apache.maven.plugins</groupId>     
+			    <artifactId>maven-war-plugin</artifactId>     
+			    <configuration>     
+			    <warSourceExcludes>src/main/resources/**</warSourceExcludes>
+			    <warName>demo-news</warName>     
+			    </configuration>     
+		   </plugin>     
+        </plugins>
+   </build>
+</project>				   																																																				  																																																																																																																																																																																																																																																																																																			   
